@@ -5,7 +5,7 @@ import useSWR from "swr";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export function useDrivers(year: number) {
+export function useDriversStandings(year: number) {
   const API_URL = `https://api.jolpi.ca/ergast/f1/${year}/driverstandings.json`;
 
   const { data, error, isLoading } = useSWR(API_URL, fetcher);

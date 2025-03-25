@@ -1,6 +1,6 @@
 "use client";
 
-import { useDrivers } from "@/hooks/useDrivers";
+import { useDrivers } from "@/hooks/useDriversStandings";
 import { useGetDriverImage } from "@/hooks/useGetDriverImage";
 import { getTeamColor } from "@/utils/getConstructorColor";
 import { Loader2 } from "lucide-react";
@@ -27,11 +27,11 @@ interface Driver {
 const DriverCard = ({
   driver,
   bgColor,
-  position
+  position,
 }: {
   driver: Driver;
   bgColor: string;
-  position: number
+  position: number;
 }) => {
   const {
     imageUrl,
@@ -46,25 +46,22 @@ const DriverCard = ({
     <li
       key={driver.Driver.driverId}
       className="p-4 border rounded-lg flex items-center gap-4"
-      // style={{ backgroundColor: bgColor }}
     >
       <span className="font-f1-wide text-2xl">
         {driver.position ? driver.position : position}
       </span>
       {imageLoading ? (
-        <Loader2 className="animate-spin w-14" />
+        <Loader2 className="animate-spin w-16" />
       ) : imageError ? (
         <p>Error: {imageError}</p>
       ) : (
-        (
-          <Avatar className="shrink-0 w-14 h-14">
-            <AvatarImage
-              src={imageUrl || "/images/stig.png"}
-              alt={`${driver.Driver.givenName} ${driver.Driver.familyName}`}
-              className="object-cover"
-            />
-          </Avatar>
-        )
+        <Avatar className="shrink-0 w-16 h-16">
+          <AvatarImage
+            src={imageUrl || "/images/stig.png"}
+            alt={`${driver.Driver.givenName} ${driver.Driver.familyName}`}
+            className="object-cover"
+          />
+        </Avatar>
       )}
       <div className="font-semibold flex flex-col gap-2">
         <h2 className="text-3xl">
@@ -92,22 +89,19 @@ export default function DriverList({ year }: { year: number }) {
   if (driversLoading) return <F1LightsLoader />;
 
   return (
-    <div className="">
-      <h2 className="text-xl font-bold mb-4">F1 {year}</h2>
-      <ul className="grid grid-cols-1 gap-4">
-        {drivers.map((driver, index) => {
-          const mainConstructor = driver.Constructors[0]?.name || "";
-          const bgColor = getTeamColor(mainConstructor);
-          return (
-            <DriverCard
-              key={driver.Driver.driverId}
-              driver={driver}
-              bgColor={bgColor}
-              position={index+1}
-            />
-          );
-        })}
-      </ul>
-    </div>
+    <ul className="grid grid-cols-1 gap-4">
+      {drivers.map((driver, index) => {
+        const mainConstructor = driver.Constructors[0]?.name || "";
+        const bgColor = getTeamColor(mainConstructor);
+        return (
+          <DriverCard
+            key={driver.Driver.driverId}
+            driver={driver}
+            bgColor={bgColor}
+            position={index + 1}
+          />
+        );
+      })}
+    </ul>
   );
 }

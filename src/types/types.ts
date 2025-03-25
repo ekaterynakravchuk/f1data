@@ -24,3 +24,11 @@ export type DriverStanding = {
   Driver: Driver;
   Constructors: Constructor[];
 };
+
+export type ConstructorStanding = {
+  position: string;
+  positionText: string;
+  points: string;
+  wins: string;
+  Constructor: Constructor;
+};
