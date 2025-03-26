@@ -49,6 +49,13 @@ const countryData: Record<string, string> = {
   Cambodian: "KH",
   Cameroonian: "CM",
   CapeVerdian: "CV",
+  Hungarian: "HU",
+  Irish: "IE",
+  Liechtensteiner: "LI",
+  Uruguayan: "UY",
+  Chilean: "CL",
+  Colombian: "CO",
+  Czech: "CZ",
 };
 
 const normalizeNationality = (nationality: string) => {

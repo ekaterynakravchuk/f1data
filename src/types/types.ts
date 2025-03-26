@@ -8,6 +8,14 @@ export type Driver = {
   dateOfBirth: string;
   nationality: string;
 }
+export type AllDriver = {
+  driverId: string;
+  url: string;
+  givenName: string;
+  familyName: string;
+  dateOfBirth: string;
+  nationality: string;
+}
 
 export type Constructor = {
   constructorId: string;

@@ -16,6 +16,6 @@ export function getTeamColor (name: string) {
   const foundColor = Object.entries(teamColors).find(([key]) =>
     normalizedTeamName.toLowerCase().includes(key)
   );
-  return foundColor ? foundColor[1] : "var(--default-color)";
+  return foundColor ? foundColor[1] : "rgba(255, 255, 255, 0.65)";
 };
 
