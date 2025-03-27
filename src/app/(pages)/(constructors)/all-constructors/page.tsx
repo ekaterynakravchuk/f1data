@@ -1,12 +1,12 @@
 "use client";
 
 import { TypingAnimation } from "@/components/magicui/typing-animation";
-import useAllDrivers from "@/features/all-lists/api/useAllDrivers";
-import AllDriversList from "@/features/all-lists/components/DriversList/all-drivers-list";
+import useAllConstructors from "@/features/all-lists/api/useAllConstructors";
+import AllConstructorsList from "@/features/all-lists/components/ConstructorsList/all-constructors-list";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
-const AllDrivers = () => {
+const AllConstructors = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -16,7 +16,7 @@ const AllDrivers = () => {
   );
   const [page, setPage] = useState<number>(initialPage);
 
-  const { drivers, totalPages, isLoading } = useAllDrivers(page - 1);
+  const { constructors, totalPages, isLoading } = useAllConstructors(page - 1);
 
   const handleSetPage = (newPage: number | ((prev: number) => number)) => {
     const updatedPage = typeof newPage === "function" ? newPage(page) : newPage;
@@ -35,16 +35,16 @@ const AllDrivers = () => {
       <div className="f1-header bg-[#e10600] py-6 px-4 min-h-[144px]">
         <div className="container mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">
-            F1 DRIVERS
+            F1 CONSTRUCTORS
           </h1>
           <TypingAnimation className="text-lg mt-2 opacity-90" duration={40}>
-            All Formula 1 Championship Drivers
+            All Formula 1 Championship Constructors
           </TypingAnimation>
         </div>
       </div>
       <div className="container">
-        <AllDriversList
-          drivers={drivers}
+        <AllConstructorsList
+          constructors={constructors}
           page={page}
           setPage={handleSetPage}
           totalPages={totalPages}
@@ -55,4 +55,4 @@ const AllDrivers = () => {
   );
 };
 
-export default AllDrivers;
+export default AllConstructors;

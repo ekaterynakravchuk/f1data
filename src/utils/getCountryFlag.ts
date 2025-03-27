@@ -56,6 +56,8 @@ const countryData: Record<string, string> = {
   Chilean: "CL",
   Colombian: "CO",
   Czech: "CZ",
+  Malaysian: "MY",
+  HongKong: "HK",
 };
 
 const normalizeNationality = (nationality: string) => {

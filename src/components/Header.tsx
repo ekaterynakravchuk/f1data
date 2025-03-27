@@ -24,7 +24,7 @@ const Header = () => {
             <NavigationMenuItem>
               <NavigationMenuTrigger className={pathname.includes("/drivers") ? "bg-accent" : ""}>Drivers</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="w-[430px]">
+                <ul className="w-[630px]">
                   <li>
                     <NavigationMenuLink href="/drivers-standings" className={pathname === "/drivers-standings" ? "underline" : ""}>
                       Drivers Standings
@@ -41,7 +41,7 @@ const Header = () => {
             <NavigationMenuItem>
               <NavigationMenuTrigger className={pathname.includes("/constructors") ? "bg-accent" : ""}>Constructors</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="w-[430px]">
+                <ul className="w-[630px]">
                   <li>
                     <NavigationMenuLink href="/constructors-standings" className={pathname === "/constructors-standings" ? "underline" : ""}>
                       Constructors Standings
@@ -50,6 +50,43 @@ const Header = () => {
                   <li>
                     <NavigationMenuLink href="/all-constructors" className={pathname === "/all-constructors" ? "underline" : ""}>
                       All Constructors
+                    </NavigationMenuLink>
+                  </li>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className={pathname.includes("/constructors") ? "bg-accent" : ""}>Grand Prix</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="w-[630px] grid grid-cols-2">
+                  <li>
+                    <NavigationMenuLink href="/grand-prix/2025" className={pathname === "/grand-prix/2025" ? "underline" : ""}>
+                      2025 season
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink href="/grand-prix/2024" className={pathname === "/grand-prix/2024" ? "underline" : ""}>
+                      2024 season
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink href="/grand-prix/2023" className={pathname === "/grand-prix/2023" ? "underline" : ""}>
+                      2023 season
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink href="/grand-prix/2022" className={pathname === "/grand-prix/2022" ? "underline" : ""}>
+                      2022 season
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink href="/grand-prix/2021" className={pathname === "/grand-prix/2021" ? "underline" : ""}>
+                      2021 season
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink href="/grand-prix/2020" className={pathname === "/grand-prix/2020" ? "underline" : ""}>
+                      2020 season
                     </NavigationMenuLink>
                   </li>
                 </ul>

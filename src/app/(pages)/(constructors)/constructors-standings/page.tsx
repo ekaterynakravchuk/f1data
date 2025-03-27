@@ -4,14 +4,20 @@ import { LineShadowText } from "@/components/magicui/line-shadow-text";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import ConstructorsList from "@/features/standings/components/ConstrurtorsList/constructors-standings-list";
 import YearSelector from "@/features/standings/components/year-selector";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const ConstructorsStandings = () => {
-  const [year, setYear] = useState<number | null>(null);
+  const searchParams = useSearchParams();
+  const urlYear = searchParams.get("year");
+  const initialYear = urlYear
+    ? parseInt(urlYear, 10)
+    : new Date().getFullYear();
+  const [year, setYear] = useState(initialYear);
 
   useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
+    setYear(initialYear);
+  }, [initialYear]);
 
   return (
     <main className="py-6 flex flex-col gap-6">
@@ -35,7 +41,7 @@ const ConstructorsStandings = () => {
       </div>
       <div className="container">
         <YearSelector onYearChange={setYear} />
-        <ConstructorsList year={!year ? new Date().getFullYear() : year} />
+        <ConstructorsList year={year} />
       </div>
     </main>
   );
