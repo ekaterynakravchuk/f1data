@@ -7,7 +7,7 @@ export type Driver = {
   familyName: string;
   dateOfBirth: string;
   nationality: string;
-}
+};
 export type AllDriver = {
   driverId: string;
   url: string;
@@ -15,20 +15,20 @@ export type AllDriver = {
   familyName: string;
   dateOfBirth: string;
   nationality: string;
-}
+};
 export type AllConstructor = {
   constructorId: string;
   url: string;
   name: string;
   nationality: string;
-}
+};
 
 export type Constructor = {
   constructorId: string;
   url: string;
   name: string;
   nationality: string;
-}
+};
 
 export type DriverStanding = {
   position: string;
@@ -68,4 +68,91 @@ export type CircuitsByContinent = {
   Africa?: Circuit[];
   Oceania?: Circuit[];
   Unknown?: Circuit[];
+};
+
+export type GrandPrix = {
+  season: string;
+  round: string;
+  url: string;
+  raceName: string;
+  Circuit: Circuit;
+  date: string;
+  time: string;
+  Results: GrandPrixResult[];
+  FirstPractice?: {
+    date: string;
+    time: string;
+  };
+  SecondPractice?: {
+    date: string;
+    time: string;
+  };
+  ThirdPractice?: {
+    date: string;
+    time: string;
+  };
+  Qualifying?: {
+    date: string;
+    time: string;
+  };
+  Sprint?: {
+    date: string;
+    time: string;
+  };
+  SprintQualifying?: {
+    date: string;
+    time: string;
+  };
+};
+
+export type GrandPrixResult = {
+  number: string;
+  position: string;
+  positionText: string;
+  points: string;
+  Driver: {
+    driverId: string;
+    permanentNumber: string;
+    code: string;
+    url: string;
+    givenName: string;
+    familyName: string;
+    dateOfBirth: string;
+    nationality: string;
+  };
+  Constructor: {
+    constructorId: string;
+    url: string;
+    name: string;
+    nationality: string;
+  };
+  grid: string;
+  laps: string;
+  status: string;
+  Time?: {
+    millis: string;
+    time: string;
+  };
+  FastestLap?: {
+    rank: string;
+    lap: string;
+    Time: {
+      time: string;
+    };
+    AverageSpeed?: {
+      units: string;
+      speed: string;
+    };
+  };
+};
+
+export type SingleGrandPrix = {
+  season: string;
+  round: string;
+  url: string;
+  raceName: string;
+  Circuit: Circuit;
+  date: string;
+  time: string;
+  Results: GrandPrixResult[];
 };
