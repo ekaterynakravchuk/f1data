@@ -110,22 +110,8 @@ export type GrandPrixResult = {
   position: string;
   positionText: string;
   points: string;
-  Driver: {
-    driverId: string;
-    permanentNumber: string;
-    code: string;
-    url: string;
-    givenName: string;
-    familyName: string;
-    dateOfBirth: string;
-    nationality: string;
-  };
-  Constructor: {
-    constructorId: string;
-    url: string;
-    name: string;
-    nationality: string;
-  };
+  Driver: Driver;
+  Constructor: Constructor;
   grid: string;
   laps: string;
   status: string;
@@ -156,3 +142,23 @@ export type SingleGrandPrix = {
   time: string;
   Results: GrandPrixResult[];
 };
+export type Sprint = {
+  season: string;
+  round: string;
+  url: string;
+  raceName: string;
+  Circuit: Circuit;
+  date: string;
+  time: string;
+  SprintResults: GrandPrixResult[];
+};
+
+export interface QualifyingResult {
+  number: string;
+  position: string;
+  Driver: Driver;
+  Constructor: Constructor;
+  Q1: string;
+  Q2: string;
+  Q3: string;
+}

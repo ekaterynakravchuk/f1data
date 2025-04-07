@@ -14,7 +14,7 @@ const CircuitsTabItem = ({ circuit }: CircuitsTabItemProps) => {
         href={circuit.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center p-3 rounded-md bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors"
+        className="flex items-center p-3 h-full rounded-md bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors"
       >
         <div className="flex-shrink-0 mr-3 h-8 w-8 flex items-center justify-center rounded-full bg-gray-700">
           <MapPin className="h-4 w-4 text-gray-300" />

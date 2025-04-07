@@ -172,7 +172,7 @@ export const DriverCard = ({ driver, bgColor, position }: DriverCardProps) => {
             {driver.Driver.permanentNumber && (
               <div
                 className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full text-white"
-                style={{ backgroundColor: bgColor }}
+                style={{ backgroundColor: bgColor || "rgba(255, 255, 255, 0.65)" }}
               >
                 <span className="text-sm">
                   {driver.Driver.permanentNumber === "33"
@@ -191,7 +191,7 @@ export const DriverCard = ({ driver, bgColor, position }: DriverCardProps) => {
                 className="font-f1-wide text-xl font-bold tracking-wide"
               >
                 {driver.Driver.givenName}{" "}
-                <span style={{ color: bgColor }}>
+                <span style={{ color: bgColor || "rgba(255, 255, 255, 0.65)" }}>
                   {driver.Driver.familyName}
                 </span>
               </h2>
@@ -211,7 +211,9 @@ export const DriverCard = ({ driver, bgColor, position }: DriverCardProps) => {
                 >
                   <span
                     className="mr-1.5 inline-block h-3 w-3 rounded-full"
-                    style={{ backgroundColor: bgColor }}
+                    style={{
+                      backgroundColor: bgColor || "rgba(255, 255, 255, 0.65)",
+                    }}
                   />
                   {constructor.name}
                 </span>
@@ -222,7 +224,10 @@ export const DriverCard = ({ driver, bgColor, position }: DriverCardProps) => {
           {/* Points */}
           <div className="ml-auto flex flex-col items-end">
             <span className="text-sm font-medium text-gray-500">POINTS</span>
-            <p className="flex items-baseline" style={{ color: bgColor }}>
+            <p
+              className="flex items-baseline"
+              style={{ color: bgColor || "rgba(255, 255, 255, 0.65)" }}
+            >
               <span
                 ref={pointsRef}
                 className="font-f1-black text-4xl font-black"

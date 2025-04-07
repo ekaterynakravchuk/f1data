@@ -5,41 +5,41 @@
 
 @font-face {
   font-family: "f1 italic 400";
-  src: url('/fonts/f1-italic-400.woff2') format("woff2");
+  src: url("/fonts/f1-italic-400.woff2") format("woff2");
 }
 @font-face {
   font-family: "f1 reg 400";
-  src: url('/fonts/f1-reg-400.woff2') format("woff2");
+  src: url("/fonts/f1-reg-400.woff2") format("woff2");
 }
 @font-face {
   font-family: "f1 reg 700";
-  src: url('/fonts/f1-reg-700.woff2') format("woff2");
+  src: url("/fonts/f1-reg-700.woff2") format("woff2");
 }
 @font-face {
   font-family: "f1 reg 900";
-  src: url('/fonts/f1-reg-900.woff2') format("woff2");
+  src: url("/fonts/f1-reg-900.woff2") format("woff2");
 }
 @font-face {
   font-family: "f1 wide 400";
-  src: url('/fonts/f1-wide-400.woff2') format("woff2");
+  src: url("/fonts/f1-wide-400.woff2") format("woff2");
 }
 @font-face {
   font-family: "f1 digits 400";
-  src: url('/fonts/f1-digits-400.woff2') format("woff2");
+  src: url("/fonts/f1-digits-400.woff2") format("woff2");
 }
 
 :root {
   /* Colors */
-  --redbull: #3671C6;
+  --redbull: #3671c6;
   --ferrari: #b5151b;
-  --mclaren: #F58020;
-  --williams: #64C4FF;
+  --mclaren: #f58020;
+  --williams: #64c4ff;
   --alpine: #0093cc;
   --aston-martin: #229971;
-  --haas: #B6BABD;
-  --rbf1team: #5E8FAA;
-  --sauber: #52E252;
-  --mercedes: #6CD3BF;
+  --haas: #b6babd;
+  --rbf1team: #5e8faa;
+  --sauber: #52e252;
+  --mercedes: #6cd3bf;
   /* Fonts */
   --font-italic: "f1 italic 400";
   --font-regular: "f1 reg 400";
@@ -218,4 +218,44 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   pointer-events: none;
 }
-
+.switcher {
+  position: static;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.switcher span {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--black);
+}
+.toggle {
+  width: 40px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 20px;
+  position: relative;
+  transition: background 0.3s;
+}
+.toggle::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  top: 1px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+body.v4 .toggle {
+  background: #444;
+}
+body.v4 .toggle::before {
+  transform: translateX(20px);
+}

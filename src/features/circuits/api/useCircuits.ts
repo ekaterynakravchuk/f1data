@@ -65,6 +65,9 @@ export function useCircuits() {
 
   const circuits: Circuit[] = data?.MRData?.CircuitTable?.Circuits || [];
 
+  console.log(circuits.map((circuit) => circuit.circuitId));
+  
+
   const circuitsByContinent = circuits.reduce<Record<string, Circuit[]>>(
     (acc, circuit) => {
       const continent = continentMap[circuit.Location.country] || "Unknown";

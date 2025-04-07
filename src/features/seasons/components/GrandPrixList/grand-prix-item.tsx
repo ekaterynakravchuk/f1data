@@ -182,17 +182,6 @@ const GrandPrixItem = ({ gp, isFinished }: Props) => {
               <MapPin className="h-3 w-3 ml-1" />
             </a>
           </div>
-
-          {/* Link to Grand Prix page */}
-          {!isFinished && (
-            <Link
-              href={`/grand-prix/${gp.season}/${gp.round}`}
-              className="mt-4 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-gray-200 rounded-md text-sm font-medium transition-colors flex items-center relative z-20"
-              onClick={(e) => e.stopPropagation()}
-            >
-              View Details
-            </Link>
-          )}
         </div>
       </div>
     </div>

@@ -5,11 +5,12 @@ import React from 'react'
 type Props = {
   year: string
   name: string
+  winnerColor: string
 }
 
-const GrandPrixInfoHeader = ({ year, name }: Props) => {
+const GrandPrixInfoHeader = ({ year, name, winnerColor }: Props) => {
   return (
-    <div className="f1-header bg-[#e10600] py-6 px-4 min-h-[144px]">
+    <div className={`f1-header py-6 px-4 min-h-[144px]`} style={{ backgroundColor: winnerColor || "transparent" }}>
       <div className="container mx-auto">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">
           {name}{" "}
