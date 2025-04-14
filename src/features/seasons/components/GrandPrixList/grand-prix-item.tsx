@@ -61,7 +61,7 @@ const GrandPrixItem = ({ gp, isFinished }: Props) => {
           <div className="flex items-center text-gray-300 mb-4">
             <Trophy className="h-4 w-4 mr-2 text-amber-500" />
             <span className="font-medium">
-              Race: {formatDate(gp.date)} {formatTime(gp.time)}
+              Race: {formatDate(gp.date)} <span className='inline-block ml-6'>{formatTime(gp.time)}</span> UTC
             </span>
           </div>
 
@@ -91,7 +91,9 @@ const GrandPrixItem = ({ gp, isFinished }: Props) => {
                         <div className="flex items-center text-sm text-gray-200">
                           <Clock className="h-3 w-3 mr-1" />
                           {formatDate(gp.FirstPractice.date)}{" "}
-                          {formatTime(gp.FirstPractice.time)}
+                          <span className="inline-block ml-auto">
+                            {formatTime(gp.FirstPractice.time)} UTC
+                          </span>
                         </div>
                       </div>
                     )}
@@ -102,7 +104,9 @@ const GrandPrixItem = ({ gp, isFinished }: Props) => {
                         <div className="flex items-center text-sm text-gray-200">
                           <Clock className="h-3 w-3 mr-1" />
                           {formatDate(gp.SecondPractice.date)}{" "}
-                          {formatTime(gp.SecondPractice.time)}
+                          <span className="inline-block ml-auto">
+                            {formatTime(gp.SecondPractice.time)} UTC
+                          </span>
                         </div>
                       </div>
                     )}
@@ -113,7 +117,9 @@ const GrandPrixItem = ({ gp, isFinished }: Props) => {
                         <div className="flex items-center text-sm text-gray-200">
                           <Clock className="h-3 w-3 mr-1" />
                           {formatDate(gp.ThirdPractice.date)}{" "}
-                          {formatTime(gp.ThirdPractice.time)}
+                          <span className="inline-block ml-auto">
+                            {formatTime(gp.ThirdPractice.time)} UTC
+                          </span>
                         </div>
                       </div>
                     )}
@@ -124,7 +130,9 @@ const GrandPrixItem = ({ gp, isFinished }: Props) => {
                         <div className="flex items-center text-sm text-gray-200">
                           <Clock className="h-3 w-3 mr-1" />
                           {formatDate(gp.Qualifying.date)}{" "}
-                          {formatTime(gp.Qualifying.time)}
+                          <span className="inline-block ml-auto">
+                            {formatTime(gp.Qualifying.time)} UTC
+                          </span>
                         </div>
                       </div>
                     )}
@@ -135,7 +143,9 @@ const GrandPrixItem = ({ gp, isFinished }: Props) => {
                         <div className="flex items-center text-sm text-gray-200">
                           <Clock className="h-3 w-3 mr-1" />
                           {formatDate(gp.Sprint.date)}{" "}
-                          {formatTime(gp.Sprint.time)}
+                          <span className="inline-block ml-auto">
+                            {formatTime(gp.Sprint.time)} UTC
+                          </span>
                         </div>
                       </div>
                     )}
@@ -148,7 +158,9 @@ const GrandPrixItem = ({ gp, isFinished }: Props) => {
                         <div className="flex items-center text-sm text-gray-200">
                           <Clock className="h-3 w-3 mr-1" />
                           {formatDate(gp.SprintQualifying.date)}{" "}
-                          {formatTime(gp.SprintQualifying.time)}
+                          <span className="inline-block ml-auto">
+                            {formatTime(gp.SprintQualifying.time)}
+                          </span>
                         </div>
                       </div>
                     )}

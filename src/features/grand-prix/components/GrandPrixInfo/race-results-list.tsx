@@ -98,7 +98,7 @@ const RaceResultsList = ({ gp, resultsRef }: Props) => {
                       ) : positionChange < 0 ? (
                         <span className="text-red-800">{positionChange}</span>
                       ) : (
-                        <span className="text-gray-600">0</span>
+                        <span className="text-gray-600">= 0</span>
                       )}
                     </span>
                   </td>
@@ -114,6 +114,7 @@ const RaceResultsList = ({ gp, resultsRef }: Props) => {
                   </td>
                   <td className="py-4 px-4 text-right font-medium">
                     {result.points}
+                    <span className="block text-[10px]">PTS</span>
                   </td>
                 </tr>
               );

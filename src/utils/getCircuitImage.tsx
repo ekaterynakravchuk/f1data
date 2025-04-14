@@ -77,7 +77,7 @@ const circuitsImages = [
   { circuitId: "Silverstone", image: "/images/circuits/british_gp.jpg" },
   { circuitId: "Sochi", image: "/images/circuits/russian_gp.jpg" },
   { circuitId: "Spa", image: "/images/circuits/belgian_gp.jpg" },
-  { circuitId: "Suzuka", image: "/images/circuits/japanese_gp.jpg" },
+  { circuitId: "Suzuka", image: "/images/circuits/suzuka.webp" },
   { circuitId: "Tremblant", image: "/images/circuits/canadian_circuit.jpg" },
   { circuitId: "Valencia", image: "/images/circuits/spain_street.jpg" },
   { circuitId: "Vegas", image: "/images/circuits/las_vegas_strip.jpg" },

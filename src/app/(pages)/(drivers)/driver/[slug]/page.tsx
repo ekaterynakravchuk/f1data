@@ -1,5 +1,9 @@
-function DriverPage({ params }: { params: { slug: string } }) {
-  return <div>DriverPage {params.slug}</div>;
-}
+type DriverPageProps = {
+  params: {
+    slug: string;
+  };
+};
 
-export default DriverPage;
+export default function DriverPage({ params }: DriverPageProps) {
+  return <div>DriverPage: {params.slug}</div>;
+}
