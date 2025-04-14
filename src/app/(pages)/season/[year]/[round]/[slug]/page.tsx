@@ -2,23 +2,19 @@ import React from "react";
 import GrandPrixInfo from "@/features/grand-prix/components/GrandPrixInfo/grand-prix-info";
 
 type Props = {
-  params: {
+  params: Promise<{
     year: string;
     round: string;
     slug: string;
-  };
+  }>;
 };
 
-export default function GrandPrixPage({ params }: Props) {
-  const resolvedParams = React.use(Promise.resolve(params));
+export default async function GrandPrixPage({ params }: Props) {
+  const { year, round, slug } = await params;
 
   return (
     <div>
-      <GrandPrixInfo
-        year={resolvedParams.year}
-        round={resolvedParams.round}
-        slug={resolvedParams.slug}
-      />
+      <GrandPrixInfo year={year} round={round} slug={slug} />
     </div>
   );
 }
