@@ -1,11 +1,11 @@
-import { notFound } from "next/navigation";
+import React from "react";
 
 type DriverPageProps = {
   params: { slug: string };
 };
 
 export default function DriverPage({ params }: DriverPageProps) {
-  if (!params?.slug) return notFound();
+  const resolvedParams = React.use(Promise.resolve(params));
 
-  return <div>DriverPage: {params.slug}</div>;
+  return <div>DriverPage: {resolvedParams.slug}</div>;
 }
