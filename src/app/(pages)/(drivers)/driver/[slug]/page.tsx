@@ -1,11 +1,9 @@
 import React from "react";
 
-type DriverPageProps = {
-  params: { slug: string };
-};
+type DriverPageProps = Promise<{ slug: string }>;
 
-export default function DriverPage({ params }: DriverPageProps) {
-  const resolvedParams = React.use(Promise.resolve(params));
+export default async function DriverPage(props: { params: DriverPageProps }) {
+  const { slug } = await props.params;
 
-  return <div>DriverPage: {resolvedParams.slug}</div>;
+  return <div>DriverPage: {slug}</div>;
 }
